@@ -17,6 +17,8 @@ class SearchCoordinator: BaseCoordinator {
     }
     override func start() {
         let view = SearchViewController.instantiate()
+        let service = AirportService.shared
+        view.viewModel = SearchViewModel(service: service)
         self.navigationController.pushViewController(view, animated: false)
         
     }
